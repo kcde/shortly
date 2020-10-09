@@ -1,0 +1,112 @@
+.link-generator {
+    background-color: hsl(0, 0%, 90%);
+    margin-top: 10rem;
+    // @include screen-size(1024px) {
+    //     margin-top: 10%;
+    // }
+    .url-form {
+        padding: 1.3rem 0;
+        border-radius: 5px;
+        background-color: $primary-2;
+        background-image: url(/assets/images/bg-shorten-mobile.svg);
+        background-repeat: no-repeat;
+        background-position: right -35px;
+
+        transform: translateY(-50%);
+
+        @include screen-size(1024px) {
+            background-image: url(/assets/images/bg-shorten-desktop.svg);
+            background-position: left -17px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            @include screen-size(1024px) {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        input {
+            border: none;
+            border-radius: 5px;
+            &:first-child {
+                margin-bottom: 1.5rem;
+                padding-left: 1rem;
+                padding-top: 0.7rem;
+                padding-bottom: 0.7rem;
+                @include screen-size(1024px) {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &__input {
+            font-weight: 700;
+
+            @include screen-size(1024px) {
+                width: 83%;
+            }
+        }
+        .submit {
+            font-size: 1rem;
+        }
+    }
+
+    .generated-links {
+        margin-top: -50px;
+
+        @include screen-size(1024px) {
+            margin-top: -20px;
+        }
+
+        .link {
+            background-color: white;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            border-radius: 5px;
+            @include screen-size(1024px) {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .main-link {
+                border-bottom: 1px solid $gray;
+                color: $dark-violet;
+                padding-bottom: 0.625rem;
+                margin-bottom: 1rem;
+                @include screen-size(1024px) {
+                    border-bottom: none;
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+                    flex: 1;
+                }
+            }
+            .short-link {
+                color: $primary;
+
+                @include screen-size(1024px) {
+                    display: flex;
+                    align-items: center;
+                    flex: 1;
+                    justify-content: flex-end;
+                    a {
+                        margin-right: 2rem;
+                    }
+                }
+            }
+            .link-copy {
+                border-radius: 5px;
+                font-size: 1rem;
+                // display: inline-block;
+
+                margin-top: 1rem;
+                @include screen-size(1024px) {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}

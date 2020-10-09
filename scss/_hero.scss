@@ -1,0 +1,30 @@
+.hero {
+    margin-bottom: 4rem;
+    &__img {
+        @include screen-size(1024px) {
+            width: 55%;
+            order: 2;
+        }
+    }
+
+    &__text {
+        text-align: center;
+        h1 {
+            color: $dark-violet;
+            text-transform: uppercase;
+        }
+        a {
+            display: inline-block;
+        }
+        @include screen-size(1024px) {
+            width: 45%;
+            order: 1;
+            text-align: left;
+        }
+    }
+    @include screen-size(1024px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
