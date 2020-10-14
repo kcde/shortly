@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/styles/reset.css" />
+        <link rel="stylesheet" href="/styles/styles.css" />
+        <link
+            rel="shortcut icon"
+            href="./styles/favicon.ico"
+            type="image/x-icon"
+        />
+
+        <script
+            src="https://kit.fontawesome.com/859d34c07a.js"
+            crossorigin="anonymous"
+        ></script>
+        <script defer src="./app/app.js"></script>
+        <title>SHORTLY</title>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <div class="logo">
+                    <h1 class="logo-text">SHORTLY</h1>
+                    <i class="fas fa-link logo-icon"></i>
+                </div>
+                <p class="tagline">make it short</p>
+            </header>
+            <main>
+                <form class="url-form">
+                    <input
+                        type="text"
+                        name="url"
+                        id="url"
+                        class="url-input"
+                        placeholder="Input URL............"
+                    />
+                    <input type="submit" class="submit btn" value="Shorten" />
+                    <input type="button" class="copy btn dn" value="copy" />
+
+                    <!-- <p class="error-text">invalid url !</p> -->
+                </form>
+
+                <div class="shortened-links split">
+                    <div class="link">
+                        <p class="main-link">https://fontawesome.com</p>
+                        <div class="shortened-link">
+                            <a
+                                href="https://rel.ink/n2rfddewyb"
+                                target="_blank"
+                                class="short-link"
+                                >https://rel.ink/ndfscredfryb</a
+                            >
+                            <i class="fas fa-clone copy-icon"></i>
+                        </div>
+                    </div>
+                    <div class="link">
+                        <div class="main-link">https://fontawesome.com</div>
+                        <div class="shortened-link">
+                            <a
+                                href="https://rel.ink/n20ryb"
+                                target="_blank"
+                                class="short-link"
+                                >https://rel.ink/n20ryb</a
+                            >
+                            <i class="fas fa-clone copy-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <footer>
+                <div class="socials">
+                    <a href="https://twitter.com/shrtlsmnky" arget="_blank"
+                        ><i class="fab fa-twitter"></i
+                    ></a>
+                    <a href="https://github.com/kcde" target="_blank"
+                        ><i class="fab fa-github"></i
+                    ></a>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
