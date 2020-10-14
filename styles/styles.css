@@ -26,7 +26,7 @@ a {
     max-width: 768px;
     text-align: center;
     /* border: 1px solid red; */
-    padding: 0 2rem;
+    padding: 0 1rem;
 }
 
 .btn {
@@ -91,6 +91,7 @@ main {
 
 .url-form {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
@@ -115,7 +116,7 @@ main {
     font-size: 1rem;
     letter-spacing: 1px;
     color: #556881;
-    /* margin-bottom: 1rem; */
+    margin-bottom: 1rem;
 }
 
 .link {
@@ -162,6 +163,14 @@ main {
 @media screen and (min-width: 768px) {
     .link {
         flex-direction: row;
+    }
+
+    .url-form {
+        flex-direction: row;
+    }
+
+    .url-input {
+        margin-bottom: 0;
     }
 }
 
