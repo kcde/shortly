@@ -53,6 +53,14 @@ a {
     display: none;
 }
 
+.show-error {
+    animation: error 350ms ease-out forwards;
+}
+
+.border-error {
+    border: 2px solid orange;
+}
+
 /* ------------------ */
 header {
     margin-bottom: 3rem;
@@ -98,14 +106,17 @@ main {
     position: relative;
 }
 
-/* .error-text {
+.error-text {
     position: absolute;
-    top: -60%;
-    left: 0;
+    top: -1.5rem;
+    left: 1rem;
     z-index: 2;
     font-weight: 300;
     text-transform: uppercase;
-} */
+    color: orange;
+    opacity: 0;
+    transition: transform 350ms ease-in-out;
+}
 
 .url-input {
     border: none;
@@ -172,6 +183,9 @@ main {
     .url-input {
         margin-bottom: 0;
     }
+    .error-text {
+        left: 0.5rem;
+    }
 }
 
 @keyframes shake {
@@ -188,6 +202,22 @@ main {
     }
     100% {
         transform: rotate(0deg);
+        transform: scale(1);
+    }
+}
+@keyframes error {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 1;
         transform: scale(1);
     }
 }
