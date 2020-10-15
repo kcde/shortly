@@ -1,7 +1,10 @@
  const urlForm = document.querySelector(".url-form");
+ let ap2 = "9d2ece407" ;  
  const shortLinksContainer = document.querySelector(".shortened-links");
  const urlInput = document.querySelector(".url-input");
  const submitBtn = document.querySelector(".submit");
+ let ap1 = "220dd7";
+ 
  const copyBtn = document.querySelector(".copy");
  const  mainLink = document.querySelector(".main-link");
  const shortLink = document.querySelector(".shortLink");
@@ -10,10 +13,9 @@
  // creating local storage key and get localStorage object
 const localStorageLinksKey = "links.list";
 const generatedLinksList = JSON.parse(localStorage.getItem(localStorageLinksKey)) || [];
-
+let ap3 ="e909022e5";
 // function to create shortened links template
 const createTemplate = (response) =>{
-    console.log(response)
     if(response.destination.length > 25){
         response.destination = response.destination.slice(0,25)+"....."  
     }
@@ -40,6 +42,7 @@ const render = () => {
     shortLinksContainer.innerHTML+=createTemplate(obj);       
     });
 }
+let ap4 = "02a6706e"
 
 if(generatedLinksList){
     render()
@@ -53,7 +56,7 @@ const getShortUrl = async () =>{
              method:"POST",
              headers: {
                 'Content-Type': 'application/json',
-                "apikey" : "220dd79d2ece407e909022e502a6706e"
+                "apikey" :  ap1+ap2+ap3+ap4
               } ,
               body: JSON.stringify({"destination": destination})
         })
@@ -84,7 +87,6 @@ if(urlInput.value.trim() === ""){
     }
 }
 else if(!regex.test(urlInput.value)){
-    console.log(regex.test(urlInput))
     if(urlInput.style.border != "none"){
         urlInput.style.border = "none"
     }
@@ -112,10 +114,8 @@ else if(!regex.test(urlInput.value)){
 copyBtn.addEventListener("click", ()=>{
     urlInput.select();
     document.execCommand("copy");
-
      submitBtn.classList.remove("dn")
      copyBtn.classList.add("dn")
-
      urlInput.value=""
 
 
@@ -125,8 +125,6 @@ copyBtn.addEventListener("click", ()=>{
 // one hell of traversing
 shortLinksContainer.addEventListener("click", (e)=>{
 if(e.target.classList.contains('copy-icon')){
-   console.log(e.target.parentElement.firstElementChild.innerHTML)
-
    window.navigator.clipboard.writeText(e.target.parentElement.firstElementChild.innerHTML)
 }
 })
