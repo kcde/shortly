@@ -10,6 +10,17 @@
  const shortLink = document.querySelector(".shortLink");
  const errorText = document.querySelector(".error-text");
 
+
+// accomodatiing www for the api
+ let inputValue;
+ if(urlInput.value.slice(0,4) === "www."){
+     console.log(urlInput.value)
+     inputValue = `https://${urlInput.value}`
+     console.log(inputValue)
+ }else{
+     inputValue = urlInput.value;
+ }
+
  // creating local storage key and get localStorage object
 const localStorageLinksKey = "links.list";
 const generatedLinksList = JSON.parse(localStorage.getItem(localStorageLinksKey)) || [];
@@ -49,7 +60,7 @@ if(generatedLinksList){
 }
 
 const getShortUrl = async () =>{
-    let destination = urlInput.value;
+    let destination = inputValue
     const endpoint = "https://api.rebrandly.com/v1/links";
     try{
         const response = await fetch(endpoint,{
@@ -78,15 +89,17 @@ const getShortUrl = async () =>{
 
 
 urlForm.addEventListener("submit", (e)=>{
+    
     e.preventDefault();
+   
 const regex = /(https?:)(\/\/)[^\.]*\w+(\.[A-Za-z]+)\/?.*?$/gi
-if(urlInput.value.trim() === ""){
+if(inputValue.trim() === ""){
     urlInput.style.border = "3px solid orange"
     if(errorText.classList.contains("show-error")){
         errorText.classList.remove("show-error")
     }
 }
-else if(!regex.test(urlInput.value)){
+else if(!regex.test(inputValue)){
     if(urlInput.style.border != "none"){
         urlInput.style.border = "none"
     }
