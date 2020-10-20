@@ -101,7 +101,7 @@ else if(!regex.test(urlInput.value)){
         generatedLinksList.push({destination: info.destination, shortUrl: info.shortUrl });
         localStorage.setItem(localStorageLinksKey, JSON.stringify(generatedLinksList));
         shortLinksContainer.innerHTML+=createTemplate(info);
-        urlInput.value = "https:"+info.shortUrl
+        urlInput.value = "https://"+info.shortUrl
         submitBtn.classList.add("dn")
         copyBtn.classList.remove("dn")
     })
