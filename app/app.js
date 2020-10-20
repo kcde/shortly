@@ -79,7 +79,7 @@ const getShortUrl = async () =>{
 
 urlForm.addEventListener("submit", (e)=>{
     e.preventDefault();
-const regex = /^(https?:)(\/\/)[^\.]\w+(\.[A-Za-z]+)\/?.*?$/gi
+const regex = /(https?:)(\/\/)[^\.]*\w+(\.[A-Za-z]+)\/?.*?$/gi
 if(urlInput.value.trim() === ""){
     urlInput.style.border = "3px solid orange"
     if(errorText.classList.contains("show-error")){
